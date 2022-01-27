@@ -4,13 +4,27 @@
   Create a function named addTwo which accepts a number, adds 2 to the number and return the new value.
 */
 
+function addTwo(num) {
+    return num + 2;
+}
+
 /*
   Create a function named addThree which accepts a number, adds 3 to the number and return the new value.
 */
 
+
+function addThree(num) {
+    return num + 3;
+}
+
 /*
   Create a function named addFive which accepts a number, adds 5 to the number and return the new value.
 */
+
+
+function addFive(num) {
+    return num + 5;
+}
 
 /*
   Create a function named addTwoToArray which accepts:
@@ -18,6 +32,14 @@
     - Returns a new array where 2 is added to each element
     - While doing so use the funciton addTwo
 */
+
+function addTwoToArray(arr) {
+    return function addTwo() {
+        for (let element of arr) {
+            element += 2;
+        }
+    }
+}
 
 /*
   Create a function named addThreeToArray which accepts:
@@ -83,23 +105,23 @@ In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeatin
 
 // Data Starts (Don't change this)
 const people = [
-  { name: 'John Doe', age: 16 },
-  { name: 'Thomas Calls', age: 19 },
-  { name: 'Liam Smith', age: 20 },
-  { name: 'Jessy Pinkman', age: 18 },
+    { name: 'John Doe', age: 16 },
+    { name: 'Thomas Calls', age: 19 },
+    { name: 'Liam Smith', age: 20 },
+    { name: 'Jessy Pinkman', age: 18 },
 ];
 
 const grades = [
-  { name: 'John', grade: 8, sex: 'M' },
-  { name: 'Sarah', grade: 12, sex: 'F' },
-  { name: 'Bob', grade: 16, sex: 'M' },
-  { name: 'Johnny', grade: 2, sex: 'M' },
-  { name: 'Ethan', grade: 4, sex: 'M' },
-  { name: 'Paula', grade: 18, sex: 'F' },
-  { name: 'Donald', grade: 5, sex: 'M' },
-  { name: 'Jennifer', grade: 13, sex: 'F' },
-  { name: 'Courtney', grade: 15, sex: 'F' },
-  { name: 'Jane', grade: 9, sex: 'F' },
+    { name: 'John', grade: 8, sex: 'M' },
+    { name: 'Sarah', grade: 12, sex: 'F' },
+    { name: 'Bob', grade: 16, sex: 'M' },
+    { name: 'Johnny', grade: 2, sex: 'M' },
+    { name: 'Ethan', grade: 4, sex: 'M' },
+    { name: 'Paula', grade: 18, sex: 'F' },
+    { name: 'Donald', grade: 5, sex: 'M' },
+    { name: 'Jennifer', grade: 13, sex: 'F' },
+    { name: 'Courtney', grade: 15, sex: 'F' },
+    { name: 'Jane', grade: 9, sex: 'F' },
 ];
 // Data Ends
 

@@ -22,9 +22,9 @@ console.log(fruits[0], fruits[1]);
 
 // If the element at 0 index is undefined and index 1 is 'Banana' shift all the values to one lower index (use shift method)
 
-if (fruits[0] === undefined || fruits[1] === "Banana") {
-    fruits.shift();
-}
+fruits.shift();
+console.log(fruits);
+
 
 // Add a new element to the start ('Guava') and shift the index of all other to one higher value
 
@@ -44,7 +44,7 @@ fruits[1] = "Pears";
 
 // Add the 'Kiwi' and 'Lemon' to the index 1 and 2 and shift the other element to next index (use splice to add element)
 
-fruits.splice(1, 2, "Kiwi", "Lemon");
+fruits.splice(1, 0, "Kiwi", "Lemon");
 
 // Remove (slice) all the element from index 5
 
@@ -173,10 +173,8 @@ numbersTwo.reverse();
 
 // Join all fruits with '-', convert to uppercase and log it
 
-let joinn = fruits.join('-');
-console.log(joinn.toUpperCase());
+console.log(fruits.join('-').toUpperCase());
 
 // Join all fruits with '&', convert to lowercase and log it
 
-let joinn = fruits.join('&');
-console.log(joinn.toLowerCase());
+console.log(fruits.join('&').toLowerCase());

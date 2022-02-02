@@ -12,23 +12,51 @@ Clone the array before using sort method: [...arr]
 
 // - Find the index of `101` in numbers
 
+numbers.indexOf(101);
+
 // - Find the last index of `9` in numbers
+
+numbers.lastIndexOf(9);
 
 // - Convert value of strings array into a sentance like "This is a collection of words"
 
+strings.join(' ');
+
 // - Add two new words in the strings array "called" and "sentance"
+
+strings.push("called", "sentance");
 
 // - Again convert the updated array (strings) into sentance like "This is a collection of words called sentance"
 
+strings.join(' ');
+
 // - Remove the first word in the array (strings)
+
+delete strings[0];
 
 // - Find all the words that contain 'is' use string method 'includes'
 
+// for (let element of strings) {
+//     if (strings.includes("is") === true) {
+//         console.log(element);
+//     }
+// }
+
+
+
+
 // - Find all the words that contain 'is' use string method 'indexOf'
+
+let index = strings.indexOf('is');
+strings[index];
 
 // - Check if all the numbers in numbers array are divisible by three use array method (every)
 
+numbers.every((num) => { return num % 5 === 0; })
+
 // -  Sort Array from smallest to largest
+
+
 
 // - Remove the last word in strings
 
@@ -54,10 +82,10 @@ Clone the array before using sort method: [...arr]
 
 // - Customers Array
 var customers = [
-  { firstname: 'Joe', lastname: 'Blogs' },
-  { firstname: 'John', lastname: 'Smith' },
-  { firstname: 'Dave', lastname: 'Jones' },
-  { firstname: 'Jack', lastname: 'White' },
+    { firstname: 'Joe', lastname: 'Blogs' },
+    { firstname: 'John', lastname: 'Smith' },
+    { firstname: 'Dave', lastname: 'Jones' },
+    { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
 

@@ -20,6 +20,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM.jpeg)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -28,6 +29,8 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM (1).jpeg)
+
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -36,6 +39,7 @@ function double(num) {
 }
 let doubleNumbers = numbers.map(double);
 ```
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM (2).jpeg)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -44,14 +48,16 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM (3).jpeg)
 
-```js
+```js 
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
   console.log(num);
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM (4).jpeg)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -60,7 +66,7 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
-
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM (5).jpeg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function isOdd(num) {
@@ -68,7 +74,7 @@ function isOdd(num) {
 }
 let oddNumbers = numbers.filter(isOdd);
 ```
-
+![](./TA-JS-methods-TJaaad/block-BJaadk/code/WhatsApp Image 2022-02-03 at 1.08.57 AM (6).jpeg)
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {

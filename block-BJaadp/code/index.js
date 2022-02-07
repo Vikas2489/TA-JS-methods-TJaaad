@@ -1,46 +1,84 @@
 let persons = [
-  { name: 'John', grade: 8, sex: 'M' },
-  { name: 'Sarah', grade: 12, sex: 'F' },
-  { name: 'Bob', grade: 16, sex: 'M' },
-  { name: 'Johnny', grade: 2, sex: 'M' },
-  { name: 'Ethan', grade: 4, sex: 'M' },
-  { name: 'Paula', grade: 18, sex: 'F' },
-  { name: 'Donald', grade: 5, sex: 'M' },
-  { name: 'Jennifer', grade: 13, sex: 'F' },
-  { name: 'Courtney', grade: 15, sex: 'F' },
-  { name: 'Jane', grade: 9, sex: 'F' },
-  { name: 'John', grade: 17, sex: 'M' },
-  { name: 'Arya', grade: 14, sex: 'F' },
+    { name: 'John', grade: 8, sex: 'M' },
+    { name: 'Sarah', grade: 12, sex: 'F' },
+    { name: 'Bob', grade: 16, sex: 'M' },
+    { name: 'Johnny', grade: 2, sex: 'M' },
+    { name: 'Ethan', grade: 4, sex: 'M' },
+    { name: 'Paula', grade: 18, sex: 'F' },
+    { name: 'Donald', grade: 5, sex: 'M' },
+    { name: 'Jennifer', grade: 13, sex: 'F' },
+    { name: 'Courtney', grade: 15, sex: 'F' },
+    { name: 'Jane', grade: 9, sex: 'F' },
+    { name: 'John', grade: 17, sex: 'M' },
+    { name: 'Arya', grade: 14, sex: 'F' },
 ];
 
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
 
+persons.map((person) => person.grade).reduce((acc, initalValue) => (acc + initalValue), 0);
+
 // Find the average grade of male
+
+let male = persons.filter(function(person) {
+    return person.sex === "M";
+})
+
+male.map((males) => males.grade).reduce((acc, initalValue) => (acc + initalValue), 0);
 
 // Find the average grade of female
 
+let Female = persons.filter(function(person) {
+    return person.sex === "F";
+})
+
+Female.map((females) => females.grade).reduce((acc, initalValue) => (acc + initalValue), 0);
+
 // Find the highest grade
+
+let allGrades = persons.map((person) => person.grade);
+
+[...allGrades].sort((a, b) => a - b);
 
 // Find the highest grade in male
 
+let male = persons.filter(function(person) {
+    return person.sex === "M";
+})
+
+let maleGrade = male.map((males) => males.grade).sort((a, b) => a - b).pop();
+
 // Find the highest grade in female
+
+let Female = persons.filter(function(person) {
+    return person.sex === "F";
+})
+
+let femaleGrade = Female.map((females) => females.grade).sort((a, b) => a - b).pop();
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
 
+let personNameStartsWithJorP = persons.filter(function(person) {
+    if (person.name.startsWith("J") || person.name.startsWith("P")) {
+        return person.grade;
+    }
+})
+
+let highestGr = personNameStartsWithJorP.map((personName) => personName.grade).sort((a, b) => a - b).pop();
+
 const fruitBasket = [
-  'banana',
-  'cherry',
-  'orange',
-  'apple',
-  'cherry',
-  'orange',
-  'apple',
-  'banana',
-  'cherry',
-  'orange',
-  'fig',
+    'banana',
+    'cherry',
+    'orange',
+    'apple',
+    'cherry',
+    'orange',
+    'apple',
+    'banana',
+    'cherry',
+    'orange',
+    'fig',
 ];
 
 /* 
@@ -51,6 +89,13 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
+
+let fruitsObj = {};
+
+for (let index = 0; index < fruitBasket.length; index++) {
+    let element = fruitBasket[index];
+
+}
 
 /* 
 
@@ -63,19 +108,21 @@ Output:
 */
 
 const data = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [10, 11, 12],
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12],
 ];
 
 // Using reduce flat data array
 
 const dataTwo = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [[10, 11], 12],
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [
+        [10, 11], 12
+    ],
 ];
 
 // Using reduce flat dataTwo array
@@ -91,14 +138,14 @@ Create these functions which accepts a number value and returns a number value:
 */
 
 let pipeline = [
-  increment,
-  double,
-  decrement,
-  decrement,
-  double,
-  triple,
-  half,
-  increment,
+    increment,
+    double,
+    decrement,
+    decrement,
+    double,
+    triple,
+    half,
+    increment,
 ];
 
 /*
@@ -116,17 +163,17 @@ EXAMPLE:
 */
 
 let pipeline2 = [
-  increment,
-  half,
-  double,
-  decrement,
-  decrement,
-  triple,
-  double,
-  triple,
-  half,
-  increment,
-  triple,
+    increment,
+    half,
+    double,
+    decrement,
+    decrement,
+    triple,
+    double,
+    triple,
+    half,
+    increment,
+    triple,
 ];
 
 // Find the output using pipeline2 the initial value if 8

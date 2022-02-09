@@ -1,35 +1,73 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
-function countAllPeople() {
-  // your code goes here
+
+function countAllPeople(house) {
+    let sum = 0;
+    let rn = got.houses.forEach((firstElement) => {
+        let people = firstElement.people;
+        console.log(sum += people.length);
+    })
+    return rn;
 }
 
-function peopleByHouses() {
-  // your code goes here
+
+let emptyObj = {};
+
+function peopleByHouses(house) {
+    let keys = got.houses.map((firstElement) => {
+        return firstElement.name;
+    })
+
+    let values = got.houses.map((firstElement) => {
+        return firstElement.people.length;
+    })
+
+    for (let i = 0; i < 12; i++) {
+        return emptyObj[keys[i]] = values[i];
+    }
+    return emptyObj;
 }
 
-function everyone() {
-  // your code goes here
+function everyone(house) {
+    let arrayss = got.houses.map((firstElement) => {
+        return firstElement.people.
+        map((people) => {
+            return people.name;
+        });
+    })
+    let namee = arrayss.flat(Infinity);
+    return namee;
 }
 
-function nameWithS() {
-  // your code goes here
+function nameWithS(houseNames) {
+    let arrayss = got.houses.map((firstElement) => {
+        return firstElement.people.
+        filter((people) => {
+            if (people.name.includes("s")) {
+                return people.name;
+            } else if (people.name.includes("S")) {
+                return people.name;
+            };
+        });
+    })
+    let namee = arrayss.flat(Infinity);
+    return namee;
 }
 
 function nameWithA() {
-  // your code goes here
+    // your code goes here
 }
 
 function surnameWithS() {
-  // your code goes here
+    // your code goes here
 }
 
 function surnameWithA() {
-  // your code goes here
+    // your code goes here
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+    // your code goes here
 }
 
 // Testing your result after writing your function

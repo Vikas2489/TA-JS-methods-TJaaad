@@ -17,7 +17,7 @@ let persons = [
 
 // Find the average grade
 
-persons.map((person) => person.grade).reduce((acc, initalValue) => (acc + initalValue), 0);
+persons.map((person) => person.grade).reduce((acc, initalValue) => (acc + initalValue), 0) / persons.length;
 
 // Find the average grade of male
 
@@ -25,7 +25,7 @@ let male = persons.filter(function(person) {
     return person.sex === "M";
 })
 
-male.map((males) => males.grade).reduce((acc, initalValue) => (acc + initalValue), 0);
+male.map((males) => males.grade).reduce((acc, initalValue) => (acc + initalValue), 0) / persons.length;
 
 // Find the average grade of female
 
@@ -33,13 +33,13 @@ let Female = persons.filter(function(person) {
     return person.sex === "F";
 })
 
-Female.map((females) => females.grade).reduce((acc, initalValue) => (acc + initalValue), 0);
+Female.map((females) => females.grade).reduce((acc, initalValue) => (acc + initalValue), 0) / persons.length;
 
 // Find the highest grade
 
 let allGrades = persons.map((person) => person.grade);
 
-[...allGrades].sort((a, b) => a - b);
+[...allGrades].sort((a, b) => a - b).pop();
 
 // Find the highest grade in male
 
@@ -60,7 +60,7 @@ let femaleGrade = Female.map((females) => females.grade).sort((a, b) => a - b).p
 // Find the highest grade for people whose name starts with 'J' or 'P'
 
 let personNameStartsWithJorP = persons.filter(function(person) {
-    if (person.name.startsWith("J") || person.name.startsWith("P")) {
+    if (person.name.startsWith("J")) {
         return person.grade;
     }
 })
@@ -90,22 +90,31 @@ Output:
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
 
-let fruitsObj = {};
-
-for (let index = 0; index < fruitBasket.length; index++) {
-    let element = fruitBasket[index];
-
-}
+let fruitsObj = fruitBasket.reduce((acc, cv) => {
+    if (acc[cv]) {
+        acc[cv] = acc[cv] + 1;
+    } else {
+        acc[cv] = 1;
+    }
+    return acc;
+}, {})
 
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
 that fruit appeared. Use the variable defined above (fruitsObj). To get all the keys of an array you can use Object.keys()
 
-Output: 
+    Output: 
 
-[['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
-*/
+    [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
+    */
+
+Object.keys(fruitsObj).reduce((acc, cv) => {
+    acc = acc.concat([
+        [cv, fruitsObj[cv]]
+    ]);
+    return acc;
+}, [])
 
 const data = [
     [1, 2, 3],
@@ -115,6 +124,11 @@ const data = [
 ];
 
 // Using reduce flat data array
+
+data.reduce(function(acc, cv) {
+    acc = acc.concat(cv);
+    return acc;
+}, [])
 
 const dataTwo = [
     [1, 2, 3],
@@ -126,6 +140,11 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
+
+dataTwo.reduce(function(acc, cv) {
+    acc = acc.concat(cv.flat(Infinity));
+    return acc;
+}, [])
 
 /*
 
@@ -148,6 +167,26 @@ let pipeline = [
     increment,
 ];
 
+function increment(num) {
+    return num + 1;
+}
+
+function double(num) {
+    return num * 2;
+}
+
+function decrement(num) {
+    return num - 1;
+}
+
+function triple(num) {
+    return num * 3;
+}
+
+function half(num) {
+    return Math.round(num / 2);
+}
+
 /*
 Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.
 
@@ -158,9 +197,13 @@ EXAMPLE:
   increment(3) - return 4
   double(4) - return 8
   decrement(8) - return 7
-
   ...
 */
+
+pipeline.reduce(function(acc, cv) {
+    acc = cv(acc);
+    return acc;
+}, 3)
 
 let pipeline2 = [
     increment,
@@ -177,3 +220,8 @@ let pipeline2 = [
 ];
 
 // Find the output using pipeline2 the initial value if 8
+
+pipeline2.reduce(function(acc, cv) {
+    acc = cv(acc);
+    return acc;
+}, 8)

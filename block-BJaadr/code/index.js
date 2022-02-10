@@ -1,35 +1,73 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+    return got.houses.reduce(function(acc, cv) {
+        acc = cv.people.length + acc;
+        return acc;
+    }, 0)
 }
 
 function peopleByHouses() {
-  // your code goes here
+    return got.houses.reduce(function(acc, cv) {
+        acc[cv.name] = cv.people.length;
+        return acc;
+    }, {})
 }
 
 function everyone() {
-  // your code goes here
+    return got.houses.reduce(function(acc, cv) {
+        acc.push(cv.people.map((p) => p.name));
+        return acc.flat(Infinity);
+    }, []);
 }
 
 function nameWithS() {
-  // your code goes here
+    let allPeople = everyone();
+    return allPeople.reduce(function(acc, cv) {
+        if (cv.includes('s') || cv.includes('S')) {
+            acc.push(cv);
+        }
+        return acc;
+    }, [])
 }
 
 function nameWithA() {
-  // your code goes here
+    let allPeople = everyone();
+    return allPeople.reduce(function(acc, cv) {
+        if (cv.includes('a') || cv.includes('A')) {
+            acc.push(cv);
+        }
+        return acc;
+    }, []);
 }
 
 function surnameWithS() {
-  // your code goes here
+    let allPeople = everyone();
+    return allPeople.reduce(function(acc, cv) {
+        if (cv.split(" ")[1].startsWith("S")) {
+            acc.push(cv);
+        }
+        return acc;
+    }, [])
 }
 
+
 function surnameWithA() {
-  // your code goes here
+    let allPeople = everyone();
+    return allPeople.reduce(function(acc, cv) {
+        if (cv.split(" ")[1].startsWith("A")) {
+            acc.push(cv);
+        }
+        return acc;
+    }, [])
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+    let arr = [];
+    return got.houses.reduce(function(acc, cv) {
+        acc[cv.name] = cv.people.map((p) => (p.name));
+        return acc;
+    }, {});
 }
 
 // Testing your result after writing your function
